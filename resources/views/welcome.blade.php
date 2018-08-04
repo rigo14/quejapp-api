@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Quejapp con Laravel está en desarrollo...
                 </div>
 
                 <div class="links">
