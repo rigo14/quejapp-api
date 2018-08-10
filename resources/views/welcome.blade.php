@@ -63,6 +63,9 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <!-- Component style -->
+        <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -91,5 +94,7 @@
                 </div>
             </div>
         </div>
+        <div id="example"></div>
+        <script src="/js/app.js"></script>
     </body>
 </html>

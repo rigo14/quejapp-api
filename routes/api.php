@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('denuncias', 'ComplaintController');
+Route::resource('denuncias', 'API\ComplaintController')->only(['index', 'create', 'store', 'show']);

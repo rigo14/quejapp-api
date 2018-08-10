@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Complaint;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Complaint;
 use App\Http\Resources\Complaint as ComplaintResource;
-use App\Http\Requests;
+//use App\Http\Requests;
 
 class ComplaintController extends Controller
 {
@@ -17,14 +18,6 @@ class ComplaintController extends Controller
         $this->complaint = $complaint;
     }
     
-    /** 
-     * 
-     */
-    public function statesIndex()
-    {
-        //$complaints = $this->complaint->states();
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -32,16 +25,26 @@ class ComplaintController extends Controller
      */
     public function index()
     {
-        $complaints = Complaint::paginate(15);
+        $complaints = $this->complaint->all();
         return ComplaintResource::collection($complaints);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function states()
+    {
+        //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function dependencies()
     {
         //
     }
@@ -61,7 +64,8 @@ class ComplaintController extends Controller
         $complaint->person_name = $request->person_name;
         $complaint->contact = $request->contact;
         $complaint->state_id = $request->state_id;
-        $complaint->save();
+        if ($complaint->save())
+            return new ComplaintResource($complaint);
     }
 
     /**
