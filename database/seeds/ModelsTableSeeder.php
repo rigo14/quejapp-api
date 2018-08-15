@@ -60,7 +60,7 @@ class ModelsTableSeeder extends Seeder
             [ 'name' => 'Procuraduría General de la República' ],
             [ 'name' => 'Consejería Jurídica del Ejecutivo Federal' ],
             [ 'name' => 'Secretaría de Turismo' ],
-            [ 'name' => 'Secretaría del Trabajo y Prevención Social']
+            [ 'name' => 'Secretaría del Trabajo y Previsión Social']
         ];
 
         foreach($dependencies as $dependency) 
@@ -82,10 +82,24 @@ class ModelsTableSeeder extends Seeder
                 'contact' => 'ver@mail.com',
                 'state_id' => 14,
                 'dependency_id' => 1
+            ],
+            [
+                'complaint' => 'queja D',
+                'person_name' => 'Francisco',
+                'contact' => 'frank@mail.com',
+                'state_id' => 7,
+                'dependency_id' => 9
+            ],
+            [
+                'complaint' => 'queja E',
+                'person_name' => 'Julian',
+                'contact' => 'julian@mail.com',
+                'state_id' => 1,
+                'dependency_id' => 4
             ]
         ];
                 
-         foreach($complaints as $complaint) 
+        foreach($complaints as $complaint) 
             App\Complaint::create($complaint);
 
     }

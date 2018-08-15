@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('denuncias/estados', 'ComplaintController@statesIndex');
-
-Route::get('denuncias/dependencias', 'ComplaintController@dependenciesIndex');
+Route::get('denuncias/estados', 'ComplaintController@states');
+Route::get('denuncias', 'ComplaintController@index');
+Route::get('denuncias/dependencias', 'ComplaintController@dependencies');

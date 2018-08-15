@@ -12,6 +12,7 @@ export default class Example extends Component {
 
                             <div className="card-body">
                                 I'm an example component!
+                                <h1>Hola mundo cruel</h1>
                             </div>
                         </div>
                     </div>

@@ -19,6 +19,20 @@ class ComplaintController extends Controller
     }
     
     /**
+     * 
+     */
+    public function compoundData()
+    {
+        $statesOrder = $this->complaint->getAsArrayCountByStatesOrder();
+        $dependenciesOrder = $this->complaint->getAsArrayCountByDependenciesOrder();
+
+        $data['statesComplaints'] = $statesOrder;
+        $data['dependenciesComplaints'] = $dependenciesOrder;
+
+        return json_encode($data);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -34,20 +48,24 @@ class ComplaintController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /*
     public function states()
     {
         //
     }
+    */
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    /*
     public function dependencies()
     {
         //
     }
+    */
 
     /**
      * Store a newly created resource in storage.
