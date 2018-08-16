@@ -76,7 +76,7 @@ export function getDataFromFetch(component) {
             let statesChartData = {
                 labels: statesNames,
                 datasets: [{
-                    label: 'Cantidad de denuncias',
+                    label: 'Cantidad',
                     backgroundColor: 'rgba(255,99,132,0.2)',
                     borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1,
@@ -96,7 +96,7 @@ export function getDataFromFetch(component) {
             let dependenciesChartData = {
                 labels: dependenciesShortNames,
                 datasets: [{
-                    label: 'Cantidad de denuncias por dependencia',
+                    label: 'Cantidad',
                     backgroundColor: 'rgba(255,99,132,0.2)',
                     borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1,

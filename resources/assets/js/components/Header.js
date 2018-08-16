@@ -3,12 +3,12 @@ import React from 'react';
 
 export function Header() {
     return (
-        <header>
+        <header className="flex-center">
             {/* <img src={icon} className="App-icon" alt="logo" /> */}
-            <div>
-                <label className="App-title">QUEJAPP</label>
+            <div className="text-center">
+                <label className="title">QUEJAPP</label>
+                <div>Alza la voz.</div>
             </div>
-            <div>Alza la voz.</div>
         </header>
     );
 }

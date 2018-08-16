@@ -14,11 +14,8 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-
-            <div class="content">
-                <div id="app"></div>
-            </div>
+        <div class=""> <!-- flex-center position-ref full-height -->
+            <div id="app"></div>
         </div>
         <script src="/js/app.js"></script>
     </body>

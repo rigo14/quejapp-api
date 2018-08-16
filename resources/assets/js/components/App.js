@@ -26,27 +26,26 @@ class App extends Component {
             <div className="container">
                 <Header />
 
-                <p className="dark mp3">
-                    Cantidad de denuncias por estado
+                <p className="title-2">
+                    Denuncias por estado
         		</p>
 
-                {!this.state.statesChartData && 'cargando...'}
+                { ! this.state.statesChartData && 'cargando...' }
 
-                {this.state.statesChartData && <HorizontalBar options={this.state.statesChartOptions} data={this.state.statesChartData} height={450} />}
+                { this.state.statesChartData && <HorizontalBar id="states-chart" height={450} options={this.state.statesChartOptions} data={this.state.statesChartData} /> }
 
-                <p className="dark mp3">
-                    Cantidad de denuncias por dependencia
+                <p className="title-2">
+                    Denuncias por dependencia
         		</p>
 
-                {!this.state.dependenciesChartData && 'cargando...'}
+                { ! this.state.dependenciesChartData && 'cargando...' }
 
-                {this.state.dependenciesChartData && <HorizontalBar options={this.state.dependenciesChartOptions} data={this.state.dependenciesChartData} height={200} />}
+                {this.state.dependenciesChartData && <HorizontalBar height={200} options={this.state.dependenciesChartOptions} data={this.state.dependenciesChartData} /> } 
 
             </div>
         );
     }
 }
 
-if (document.getElementById('app')) {
+if (document.getElementById('app'))
     ReactDOM.render(<App />, document.getElementById('app'));
-}

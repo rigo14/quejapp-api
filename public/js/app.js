@@ -55894,18 +55894,18 @@ var App = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Header__["Header"], null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'p',
-                    { className: 'dark mp3' },
-                    'Cantidad de denuncias por estado'
+                    { className: 'title-2' },
+                    'Denuncias por estado'
                 ),
                 !this.state.statesChartData && 'cargando...',
-                this.state.statesChartData && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_chartjs_2__["a" /* HorizontalBar */], { options: this.state.statesChartOptions, data: this.state.statesChartData, height: 450 }),
+                this.state.statesChartData && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_chartjs_2__["a" /* HorizontalBar */], { id: 'states-chart', height: 450, options: this.state.statesChartOptions, data: this.state.statesChartData }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'p',
-                    { className: 'dark mp3' },
-                    'Cantidad de denuncias por dependencia'
+                    { className: 'title-2' },
+                    'Denuncias por dependencia'
                 ),
                 !this.state.dependenciesChartData && 'cargando...',
-                this.state.dependenciesChartData && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_chartjs_2__["a" /* HorizontalBar */], { options: this.state.dependenciesChartOptions, data: this.state.dependenciesChartData, height: 200 })
+                this.state.dependenciesChartData && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_chartjs_2__["a" /* HorizontalBar */], { height: 200, options: this.state.dependenciesChartOptions, data: this.state.dependenciesChartData })
             );
         }
     }]);
@@ -55913,9 +55913,7 @@ var App = function (_Component) {
     return App;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-if (document.getElementById('app')) {
-    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, null), document.getElementById('app'));
-}
+if (document.getElementById('app')) __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, null), document.getElementById('app'));
 
 /***/ }),
 /* 64 */
@@ -75742,20 +75740,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 function Header() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "header",
-        null,
+        { className: "flex-center" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "div",
-            null,
+            { className: "text-center" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "label",
-                { className: "App-title" },
+                { className: "title" },
                 "QUEJAPP"
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                null,
+                "Alza la voz."
             )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "div",
-            null,
-            "Alza la voz."
         )
     );
 }
@@ -93557,7 +93555,7 @@ function getDataFromFetch(component) {
                             statesChartData = {
                                 labels: statesNames,
                                 datasets: [{
-                                    label: 'Cantidad de denuncias',
+                                    label: 'Cantidad',
                                     backgroundColor: 'rgba(255,99,132,0.2)',
                                     borderColor: 'rgba(255,99,132,1)',
                                     borderWidth: 1,
@@ -93577,7 +93575,7 @@ function getDataFromFetch(component) {
                             dependenciesChartData = {
                                 labels: dependenciesShortNames,
                                 datasets: [{
-                                    label: 'Cantidad de denuncias por dependencia',
+                                    label: 'Cantidad',
                                     backgroundColor: 'rgba(255,99,132,0.2)',
                                     borderColor: 'rgba(255,99,132,1)',
                                     borderWidth: 1,
