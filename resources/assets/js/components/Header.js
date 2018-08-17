@@ -1,13 +1,16 @@
-//import icon from '../../../../public/quejapp-icon.png';
 import React from 'react';
 
 export function Header() {
     return (
-        <header className="flex-center">
-            {/* <img src={icon} className="App-icon" alt="logo" /> */}
-            <div className="text-center">
-                <label className="title">QUEJAPP</label>
-                <div>Alza la voz.</div>
+        <header>
+            <div className="row">
+                <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                    <img id="icon" src="/images/icon.svg" className="" alt="logo" />
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                    <div className="title">QUEJAPP</div>
+                    <div>Alza la voz.</div>
+                </div>
             </div>
         </header>
     );

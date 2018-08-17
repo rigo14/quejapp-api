@@ -77,11 +77,11 @@ export function getDataFromFetch(component) {
                 labels: statesNames,
                 datasets: [{
                     label: 'Cantidad',
-                    backgroundColor: 'rgba(255,99,132,0.2)',
-                    borderColor: 'rgba(255,99,132,1)',
+                    backgroundColor: 'rgba(0,188,212,0.2)',
+                    borderColor: 'rgba(0,188,212,1)',
                     borderWidth: 1,
-                    hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                    hoverBorderColor: 'rgba(255,99,132,1)',
+                    hoverBackgroundColor: 'rgba(0,188,212,0.4)',
+                    hoverBorderColor: 'rgba(0,188,212,1)',
                     data: data.statesComplaints
                 }]
             };
@@ -97,11 +97,11 @@ export function getDataFromFetch(component) {
                 labels: dependenciesShortNames,
                 datasets: [{
                     label: 'Cantidad',
-                    backgroundColor: 'rgba(255,99,132,0.2)',
-                    borderColor: 'rgba(255,99,132,1)',
+                    backgroundColor: 'rgba(0,188,212,0.2)',
+                    borderColor: 'rgba(0,188,212,1)',
                     borderWidth: 1,
-                    hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                    hoverBorderColor: 'rgba(255,99,132,1)',
+                    hoverBackgroundColor: 'rgba(0,188,212,0.4)',
+                    hoverBorderColor: 'rgba(0,188,212,1)',
                     data: data.dependenciesComplaints
                 }]
             };
