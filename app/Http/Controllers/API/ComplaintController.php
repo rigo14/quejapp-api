@@ -11,7 +11,7 @@ use App\Http\Resources\Complaint as ComplaintResource;
 class ComplaintController extends Controller
 {
     /**
-     * Create IoC for use it later on this controller.
+     * Create a instance of class for use it later on this controller.
      */
     public function __construct(Complaint $complaint)
     {
@@ -43,11 +43,6 @@ class ComplaintController extends Controller
         return ComplaintResource::collection($complaints);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     /*
     public function states()
     {
@@ -55,11 +50,6 @@ class ComplaintController extends Controller
     }
     */
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     /*
     public function dependencies()
     {
@@ -71,19 +61,25 @@ class ComplaintController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Json Response
      */
     public function store(Request $request)
     {
-        $complaint = new Complaint;
-        $complaint->complaint = $request->complaint;
-        $complaint->city = $request->city;
-        $complaint->dependency = $request->dependency;
-        $complaint->person_name = $request->person_name;
-        $complaint->contact = $request->contact;
-        $complaint->state_id = $request->state_id;
-        if ($complaint->save())
-            return new ComplaintResource($complaint);
+        $request->validate([
+            'state_id' => 'nullable|numeric',
+            'city' => 'nullable|string',
+            'dependency_id' => 'nullable|numeric',
+            'dependency' => 'nullable|string',
+            'person_name' => 'nullable|string',
+            'contact' => 'nullable|string',
+            'complaint' => 'required|string'
+        ]);
+
+        if ($this->complaint->create($request->all()))
+           return response()->json(['status' => 1], 200);     
+        else
+           return response()->json(['status' => -1], 200); 
+
     }
 
     /**
